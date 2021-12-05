@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from './interface/person.interface';
+import { ISTandardMessageInterface } from './core/model/istandard-message-interface';
+import { OneTypedMessageInterface } from './core/model/one-typed-message-interface';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +10,15 @@ import { Person } from './interface/person.interface';
 export class AppComponent implements OnInit {
   
   title = 'store';
-  private randomJoe: Person = {
-    name: 'abc',
-    surname: 'def'
-  };
+
+  watch!: ISTandardMessageInterface<OneTypedMessageInterface>;
+
   
-  constructor(person: Person) {
-    this.randomJoe = person;
-  }
+  constructor() {}
   
   ngOnInit(): void {
-    this.randomJoe;
-    const rollo = new Person("Rollo", "Ragnarök");
-    console.log(rollo);
+    
+    console.log("Heloo");
   }
 
 }
